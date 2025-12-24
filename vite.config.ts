@@ -1,13 +1,13 @@
-export default defineConfig(({ mode }) => ({
-  base: "/YOUR_REPO_NAME/",
-  server: {
-    host: "::",
-    port: 8080,
-  },
-  plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import path from "path";
+
+export default defineConfig({
+  plugins: [react()],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
   },
-}));
+  base: "/coolchamp26.github.io/",
+});
