@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import ThemeToggle from "./ThemeToggle";
 
 const navLinks = [
   { label: "About", href: "#about" },
@@ -60,20 +61,20 @@ const Navbar = () => {
               {link.label}
             </button>
           ))}
-          <Button size="sm" onClick={() => scrollToSection("#contact")}>
-            Get in Touch
-          </Button>
+          <ThemeToggle />
         </div>
 
         {/* Mobile Menu Toggle */}
-        <Button
-          variant="ghost"
-          size="icon"
-          className="md:hidden"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        >
-          {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-        </Button>
+        <div className="flex items-center gap-2 md:hidden">
+          <ThemeToggle />
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </Button>
+        </div>
       </nav>
 
       {/* Mobile Navigation */}
@@ -89,9 +90,6 @@ const Navbar = () => {
                 {link.label}
               </button>
             ))}
-            <Button size="sm" onClick={() => scrollToSection("#contact")} className="mt-2">
-              Get in Touch
-            </Button>
           </div>
         </div>
       )}
