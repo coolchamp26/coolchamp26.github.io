@@ -23,7 +23,7 @@ const About = () => {
               Right now, I'm focused on strengthening my fundamentals: data structures, algorithms, 
               and writing clean, readable code. I believe that a strong foundation makes everything else 
               easier to learn. I'm not chasing every new framework, I'd rather understand <em>why</em>
-              something works before using it.
+               something works before using it.
             </p>
 
             <p>
