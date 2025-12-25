@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ThemeToggle from "./ThemeToggle";
+import acLogo from "@/assets/ac-logo.jpg";
 
 const navLinks = [
   { label: "About", href: "#about" },
@@ -41,13 +42,13 @@ const Navbar = () => {
       <nav className="container flex items-center justify-between h-16 md:h-20">
         <a
           href="#"
-          className="text-xl font-semibold text-foreground hover:text-primary transition-colors"
+          className="flex items-center hover:opacity-80 transition-opacity"
           onClick={(e) => {
             e.preventDefault();
             window.scrollTo({ top: 0, behavior: "smooth" });
           }}
         >
-          AC<span className="text-primary">.</span>
+          <img src={acLogo} alt="AC Logo" className="h-10 w-auto rounded" />
         </a>
 
         {/* Desktop Navigation */}
